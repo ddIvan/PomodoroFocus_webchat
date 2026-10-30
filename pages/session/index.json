@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "专注中",
+  "usingComponents": {
+    "confirm-dialog": "/components/confirm-dialog/index"
+  }
+}

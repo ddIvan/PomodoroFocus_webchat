@@ -1,0 +1,81 @@
+<view class="page settings-page">
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px; padding-right: {{navRight}}px;">
+    <view class="nav-back" bindtap="onBack">‹</view>
+    <text class="nav-title">监控参数</text>
+    <text class="nav-action" bindtap="askReset">恢复默认</text>
+  </view>
+
+  <view class="scene-chips">
+    <view
+      wx:for="{{scenes}}"
+      wx:key="key"
+      class="chip {{item.key === sceneKey ? 'chip-on' : ''}}"
+      data-key="{{item.key}}"
+      bindtap="onSceneTap"
+    >{{item.title}}</view>
+  </view>
+
+  <view class="scene-card">
+    <text class="scene-summary">{{sceneSummary}}</text>
+    <text class="scene-state {{custom ? 'scene-state-on' : ''}}">{{custom ? '已自定义' : '出厂参数'}}</text>
+  </view>
+
+  <view class="preset-row">
+    <view
+      wx:for="{{presets}}"
+      wx:key="key"
+      class="preset {{item.key === presetKey ? 'preset-on' : ''}}"
+      data-key="{{item.key}}"
+      bindtap="onPresetTap"
+    >{{item.label}}</view>
+  </view>
+
+  <view wx:for="{{groups}}" wx:for-item="group" wx:for-index="gi" wx:key="title">
+    <text class="group-title">{{group.title}}</text>
+    <view
+      class="param"
+      wx:for="{{group.items}}"
+      wx:for-item="item"
+      wx:for-index="ii"
+      wx:key="key"
+    >
+      <view class="param-head">
+        <text class="param-label">{{item.label}}</text>
+        <text class="param-value">{{item.display}}</text>
+      </view>
+      <text class="param-hint">{{item.hint}}</text>
+      <slider
+        class="param-slider"
+        min="{{item.min}}"
+        max="{{item.max}}"
+        step="{{item.step}}"
+        value="{{item.value}}"
+        activeColor="#E4572E"
+        backgroundColor="#F0E5DE"
+        block-size="20"
+        data-key="{{item.key}}"
+        data-gi="{{gi}}"
+        data-ii="{{ii}}"
+        bindchanging="onSliderChanging"
+        bindchange="onSliderChange"
+      />
+    </view>
+  </view>
+
+  <view class="note-card">
+    <text class="note-title">关于小程序版监控</text>
+    <text class="note-line">· 小程序拿不到人脸关键点，判定依据是画面活动与中央肤色区域，用来近似「人在镜头前 / 手在动」。</text>
+    <text class="note-line">· 因此 Android 版的扭头、低头、闭眼角度参数在这里不生效，也就不再展示。</text>
+    <text class="note-line">· 画面只在本机逐帧分析，不保存、不上传。</text>
+  </view>
+
+  <confirm-dialog
+    show="{{showReset}}"
+    title="恢复默认"
+    content="该场景的参数将恢复为出厂值。"
+    cancelText="取消"
+    confirmText="恢复"
+    bind:cancel="onResetCancel"
+    bind:confirm="onResetConfirm"
+  />
+</view>

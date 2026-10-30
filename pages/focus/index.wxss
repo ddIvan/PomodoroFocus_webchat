@@ -1,0 +1,460 @@
+/* 首页：尺寸按 Android dp × 2 换算成 rpx */
+.focus-page {
+  padding-bottom: 40rpx;
+}
+
+.head {
+  align-items: flex-start;
+}
+
+.date-text {
+  display: block;
+  font-size: 26rpx;
+  color: var(--pomo-text-second);
+}
+
+.greet-text {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 48rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+  line-height: 1.25;
+}
+
+.tomato-circle {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  background: var(--pomo-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.tomato-icon {
+  font-size: 44rpx;
+  line-height: 1;
+}
+
+/* ---------------- 今日番茄 ---------------- */
+
+.today-card {
+  margin-top: 36rpx;
+  transition: transform 60ms linear;
+}
+
+.goal-label {
+  display: block;
+  font-size: 26rpx;
+  opacity: 0.88;
+}
+
+.goal-row {
+  align-items: flex-end;
+  margin-top: 4rpx;
+}
+
+.today-num {
+  font-size: 92rpx;
+  font-weight: 700;
+  line-height: 1.1;
+  display: inline-block;
+}
+
+.today-num.num-in {
+  animation: num-in 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes num-in {
+  from {
+    transform: translateY(48rpx);
+    opacity: 0.15;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.goal-target {
+  font-size: 28rpx;
+  opacity: 0.85;
+  margin-left: 16rpx;
+  margin-bottom: 18rpx;
+}
+
+.bar {
+  height: 12rpx;
+  border-radius: 6rpx;
+  background: rgba(255, 255, 255, 0.25);
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 6rpx;
+  background: #fff;
+  transition: width 350ms ease-out;
+}
+
+.goal-focus {
+  display: block;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  opacity: 0.85;
+}
+
+/* ---------------- 当前计划 ---------------- */
+
+.section-title {
+  display: block;
+  margin-top: 48rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.plan-card {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+}
+
+.plan-stripe {
+  width: 8rpx;
+  height: 76rpx;
+  border-radius: 4rpx;
+  background: var(--pomo-primary-light);
+  flex: none;
+}
+
+.plan-text {
+  margin-left: 24rpx;
+  margin-right: 16rpx;
+}
+
+.plan-name {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plan-meta {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: var(--pomo-text-second);
+  line-height: 1.5;
+}
+
+/* ---------------- 监控 ---------------- */
+
+.monitor-card {
+  margin-top: 28rpx;
+}
+
+.camera-icon {
+  font-size: 36rpx;
+  margin-right: 20rpx;
+}
+
+.monitor-text {
+  margin-right: 16rpx;
+}
+
+.monitor-title {
+  display: block;
+  font-size: 30rpx;
+  color: var(--pomo-text);
+}
+
+.monitor-hint {
+  display: block;
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+}
+
+.field-label {
+  display: block;
+  margin-top: 28rpx;
+  font-size: 26rpx;
+  color: var(--pomo-text);
+}
+
+.segmented {
+  display: flex;
+  margin-top: 12rpx;
+  border: 1rpx solid var(--pomo-divider);
+  border-radius: 24rpx;
+  overflow: hidden;
+}
+
+.seg {
+  flex: 1;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  color: var(--pomo-text-second);
+}
+
+.seg-on {
+  background: var(--pomo-primary-light);
+  color: var(--pomo-primary);
+  font-weight: 600;
+}
+
+.voice-row {
+  margin-top: 28rpx;
+}
+
+.voice-title {
+  display: block;
+  font-size: 28rpx;
+  color: var(--pomo-text);
+}
+
+.voice-hint {
+  display: block;
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+}
+
+.links {
+  margin-top: 20rpx;
+}
+
+.link {
+  font-size: 24rpx;
+  color: var(--pomo-primary);
+  padding: 8rpx 0;
+  margin-right: 40rpx;
+}
+
+.rule-hint {
+  display: block;
+  margin-top: 20rpx;
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+  line-height: 1.65;
+}
+
+/* ---------------- 开始按钮 ---------------- */
+
+.start-btn {
+  margin-top: 36rpx;
+  height: 116rpx;
+  border-radius: 40rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+}
+
+/* ---------------- 今日记录 ---------------- */
+
+.records-head {
+  margin-top: 52rpx;
+}
+
+.title-sm {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.clear-link {
+  margin-left: 24rpx;
+  margin-right: 0;
+}
+
+.record {
+  margin-top: 16rpx;
+  padding: 28rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 32rpx;
+}
+
+.rec-time {
+  width: 104rpx;
+  flex: none;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.rec-text {
+  margin-right: 16rpx;
+}
+
+.rec-name {
+  display: block;
+  font-size: 28rpx;
+  color: var(--pomo-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rec-meta {
+  display: block;
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+}
+
+.tag-gray {
+  background: #f2eeeb;
+  color: var(--pomo-text-second);
+}
+
+/* ---------------- 入账动效层 ---------------- */
+
+.gain-layer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 99;
+}
+
+.gain-tomato {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 176rpx;
+  height: 176rpx;
+  margin-left: -88rpx;
+  margin-top: -88rpx;
+  font-size: 132rpx;
+  line-height: 176rpx;
+  text-align: center;
+  will-change: transform, opacity;
+}
+
+.gain-ripple {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 112rpx;
+  height: 112rpx;
+  margin-left: -56rpx;
+  margin-top: -56rpx;
+  border-radius: 50%;
+  border: 4rpx solid #ffffff;
+  box-sizing: border-box;
+  will-change: transform, opacity;
+}
+
+/* ---------------- 账户入口与菜单 ---------------- */
+
+.head-actions {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: 20rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #fff;
+  background: var(--pomo-primary);
+}
+
+.sheet-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(31, 26, 23, 0.42);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  z-index: 90;
+}
+
+.sheet-mask-on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8rpx 0 16rpx;
+  background: var(--pomo-surface);
+  border-radius: 36rpx 36rpx 0 0;
+  transform: translateY(110%);
+  transition: transform 0.26s cubic-bezier(0.22, 0.61, 0.36, 1);
+  z-index: 91;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+}
+
+.sheet-on {
+  transform: translateY(0);
+}
+
+.sheet-head {
+  display: flex;
+  align-items: baseline;
+  padding: 28rpx 40rpx 20rpx;
+  border-bottom: 1rpx solid var(--pomo-divider);
+}
+
+.sheet-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.sheet-role {
+  margin-left: 14rpx;
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+}
+
+.sheet-item {
+  height: 104rpx;
+  line-height: 104rpx;
+  padding: 0 40rpx;
+  font-size: 29rpx;
+  color: var(--pomo-text);
+}
+
+.sheet-item:active {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.sheet-danger {
+  color: #c0392b;
+}
+
+.sheet-cancel {
+  margin-top: 12rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  text-align: center;
+  font-size: 29rpx;
+  color: var(--pomo-text-second);
+  border-top: 1rpx solid var(--pomo-divider);
+}

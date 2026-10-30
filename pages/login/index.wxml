@@ -1,0 +1,68 @@
+<view class="page">
+  <scroll-view scroll-y class="scroll">
+    <view class="header">
+      <view class="logo">🍅</view>
+      <view class="app-name">番茄专注</view>
+      <view class="subtitle">{{busy ? '正在登录…' : '微信登录后开始你的专注'}}</view>
+    </view>
+
+    <block wx:if="{{!blocked}}">
+      <view class="card">
+        <button
+          class="wx-btn {{agree ? '' : 'wx-btn-dim'}}"
+          bindtap="doLogin"
+          loading="{{busy}}"
+          disabled="{{busy}}"
+        >
+          <text class="wx-icon">微</text>
+          <text class="wx-text">{{busy ? '登录中…' : '微信一键登录'}}</text>
+        </button>
+
+        <view class="err" wx:if="{{error}}">{{error}}</view>
+
+        <view class="agree-row">
+          <view class="agree-line" bindtap="toggleAgree">
+            <view class="box {{agree ? 'box-on' : ''}}">
+              <text class="tick" wx:if="{{agree}}">✓</text>
+            </view>
+            <text class="agree-text">我已阅读并同意</text>
+          </view>
+          <text class="link" catchtap="openPolicy">《隐私政策》</text>
+        </view>
+      </view>
+
+      <view class="footer">
+        微信登录仅用于识别身份，专注计划与记录仍保存在本机，不上传服务器
+        <view class="api-line" bindtap="editApiBase">服务器：{{apiBase}}</view>
+      </view>
+    </block>
+
+    <block wx:else>
+      <view class="card blocked-card">
+        <view class="blocked-title">未同意隐私政策</view>
+        <view class="blocked-text">
+          同意《隐私政策》后才能使用番茄专注管理。我们不会在你同意之前收集任何信息，
+          也不会发起微信登录或申请摄像头等权限。
+        </view>
+        <button class="btn btn-outline mt16" bindtap="reopenPrivacy">重新阅读隐私政策</button>
+      </view>
+    </block>
+  </scroll-view>
+
+  <privacy-dialog
+    show="{{showPrivacy}}"
+    bind:agree="onPrivacyAgree"
+    bind:disagree="onPrivacyDisagree"
+    bind:detail="onPrivacyDetail"
+  />
+
+  <confirm-dialog
+    show="{{showAgreeConfirm}}"
+    title="隐私政策"
+    content="你还没有勾选《隐私政策》。&#10;&#10;继续操作即表示你已阅读并同意本政策，同意后我们会为你自动勾选。"
+    cancelText="取消"
+    confirmText="同意并继续"
+    bind:cancel="onAgreeCancel"
+    bind:confirm="onAgreeConfirm"
+  />
+</view>

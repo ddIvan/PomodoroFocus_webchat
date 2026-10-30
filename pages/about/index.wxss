@@ -1,0 +1,98 @@
+.about-page {
+  padding: 0 40rpx 48rpx;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  height: 104rpx;
+}
+
+.nav-back {
+  width: 64rpx;
+  font-size: 44rpx;
+  line-height: 1;
+  color: var(--pomo-text);
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.nav-holder {
+  width: 64rpx;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24rpx;
+}
+
+.logo {
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 36rpx;
+  text-align: center;
+  line-height: 132rpx;
+  font-size: 56rpx;
+  font-weight: 700;
+  color: #fff;
+  background: var(--pomo-primary);
+}
+
+.app-name {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.app-version {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 44rpx;
+  padding: 30rpx 28rpx;
+  border-radius: 28rpx;
+}
+
+.item-label {
+  font-size: 28rpx;
+  color: var(--pomo-text);
+}
+
+.item-arrow {
+  font-size: 32rpx;
+  color: var(--pomo-text-second);
+}
+
+.desc {
+  display: block;
+  margin-top: 20rpx;
+  padding: 0 4rpx;
+  font-size: 21rpx;
+  line-height: 1.7;
+  color: var(--pomo-text-second);
+}
+
+.copyright {
+  display: block;
+  margin-top: 56rpx;
+  text-align: center;
+  font-size: 20rpx;
+  line-height: 1.8;
+  color: var(--pomo-text-second);
+  white-space: pre-line;
+}

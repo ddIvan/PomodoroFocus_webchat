@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "confirm-dialog": "/components/confirm-dialog/index"
+  }
+}

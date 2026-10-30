@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新建计划",
+  "usingComponents": {
+    "confirm-dialog": "/components/confirm-dialog/index"
+  }
+}

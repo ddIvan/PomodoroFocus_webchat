@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "登录",
+  "usingComponents": {
+    "privacy-dialog": "/components/privacy-dialog/index",
+    "confirm-dialog": "/components/confirm-dialog/index"
+  }
+}

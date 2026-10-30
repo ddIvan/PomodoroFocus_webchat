@@ -1,0 +1,63 @@
+<view class="page stats-page">
+  <view class="scroll-body">
+    <!-- 月份切换 -->
+    <view class="month-head">
+      <view class="arrow" bindtap="onPrevMonth">‹</view>
+      <text class="month-title">{{monthTitle}}</text>
+      <view class="arrow {{canNext ? '' : 'arrow-off'}}" bindtap="onNextMonth">›</view>
+    </view>
+
+    <!-- 三个数字 -->
+    <view class="nums">
+      <view class="num-item">
+        <text class="num-value mono">{{monthTomatoes}}</text>
+        <text class="num-label">本月番茄</text>
+      </view>
+      <view class="num-item">
+        <text class="num-value mono">{{monthMinutes}}</text>
+        <text class="num-label">本月专注分钟</text>
+      </view>
+      <view class="num-item">
+        <text class="num-value mono">{{totalTomatoes}}</text>
+        <text class="num-label">累计番茄</text>
+      </view>
+    </view>
+
+    <!-- 日历 -->
+    <view class="card calendar">
+      <view class="week-row">
+        <text class="week-cell" wx:for="{{weekLabels}}" wx:key="*this">{{item}}</text>
+      </view>
+      <view class="day-grid">
+        <view
+          wx:for="{{cells}}"
+          wx:key="key"
+          class="day-cell {{item.blank ? 'day-blank' : ''}} {{item.selected ? 'day-on' : ''}}"
+          data-key="{{item.key}}"
+          bindtap="onSelectDay"
+        >
+          <text class="day-num {{item.isToday ? 'day-today' : ''}}">{{item.blank ? '' : item.day}}</text>
+          <text class="day-count" wx:if="{{!item.blank && item.count > 0}}">{{item.count}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 选中日明细 -->
+    <view class="selected-head">
+      <text class="selected-title">{{selectedTitle}}</text>
+      <text class="selected-summary">{{selectedSummary}}</text>
+    </view>
+
+    <text class="empty" wx:if="{{emptyDay}}">{{emptyDayText}}</text>
+    <view wx:else>
+      <view class="card record" wx:for="{{dayRows}}" wx:key="id">
+        <text class="rec-time mono">{{item.timeText}}</text>
+        <view class="flex1 rec-text">
+          <text class="rec-name">{{item.nameText}}</text>
+          <text class="rec-meta">{{item.metaText}}</text>
+        </view>
+        <text class="tag {{item.completed ? '' : 'tag-gray'}}">{{item.badgeText}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,249 @@
+/* 全局主题，与 Android 版 colors.xml 一一对应 */
+page {
+  --pomo-primary: #E4572E;
+  --pomo-primary-dark: #C0451F;
+  --pomo-primary-light: #FFE7DC;
+  --pomo-bg: #FFF9F5;
+  --pomo-surface: #FFFFFF;
+  --pomo-text: #2E2723;
+  --pomo-text-second: #8C7F77;
+  --pomo-green: #2E9E6B;
+  --pomo-green-light: #E2F5EC;
+  --pomo-amber: #E9A23B;
+  --pomo-amber-light: #FDF1DC;
+  --pomo-track: #F0E5DE;
+  --pomo-divider: #F1E7E0;
+
+  background: var(--pomo-bg);
+  color: var(--pomo-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  font-size: 28rpx;
+}
+
+view,
+text,
+button,
+input {
+  box-sizing: border-box;
+}
+
+/* ---------------- 布局 ---------------- */
+
+.page {
+  min-height: 100vh;
+  background: var(--pomo-bg);
+}
+
+.scroll-body {
+  padding: 32rpx 40rpx 56rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex1 {
+  flex: 1;
+  min-width: 0;
+}
+
+.mt8 {
+  margin-top: 16rpx;
+}
+
+.mt12 {
+  margin-top: 24rpx;
+}
+
+.mt16 {
+  margin-top: 32rpx;
+}
+
+.mt20 {
+  margin-top: 40rpx;
+}
+
+/* ---------------- 卡片 ---------------- */
+
+.card {
+  background: var(--pomo-surface);
+  border: 1rpx solid var(--pomo-divider);
+  border-radius: 40rpx;
+  padding: 32rpx;
+}
+
+.card-tight {
+  padding: 24rpx 32rpx;
+}
+
+/* 今日番茄卡：主色渐变 */
+.card-goal {
+  background: linear-gradient(135deg, #E4572E 0%, #C0451F 100%);
+  border-radius: 40rpx;
+  padding: 40rpx;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ---------------- 文字 ---------------- */
+
+.title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.subtitle {
+  font-size: 24rpx;
+  color: var(--pomo-text-second);
+}
+
+.second {
+  color: var(--pomo-text-second);
+}
+
+.small {
+  font-size: 22rpx;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.mono {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------- 按钮 ---------------- */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 32rpx;
+  font-size: 32rpx;
+  height: 104rpx;
+  border: none;
+  line-height: 1;
+}
+
+.btn::after {
+  border: none;
+}
+
+.btn-primary {
+  background: var(--pomo-primary);
+  color: #fff;
+}
+
+.btn-primary.btn-dim {
+  opacity: 0.6;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--pomo-primary);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--pomo-primary);
+  border: 1rpx solid var(--pomo-primary);
+}
+
+.btn-danger {
+  background: var(--pomo-primary-dark);
+  color: #fff;
+}
+
+.btn-sm {
+  height: 72rpx;
+  font-size: 26rpx;
+  border-radius: 24rpx;
+}
+
+/* ---------------- 标签与分割 ---------------- */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 8rpx 20rpx;
+  border-radius: 12rpx;
+  font-size: 22rpx;
+  background: var(--pomo-primary-light);
+  color: var(--pomo-primary);
+}
+
+.tag-green {
+  background: var(--pomo-green-light);
+  color: var(--pomo-green);
+}
+
+.tag-amber {
+  background: var(--pomo-amber-light);
+  color: var(--pomo-amber);
+}
+
+.divider {
+  height: 1rpx;
+  background: var(--pomo-divider);
+}
+
+/* ---------------- 单元格 ---------------- */
+
+.cell {
+  display: flex;
+  align-items: center;
+  padding: 28rpx 0;
+}
+
+.cell-label {
+  font-size: 30rpx;
+  color: var(--pomo-text);
+}
+
+.cell-value {
+  font-size: 26rpx;
+  color: var(--pomo-text-second);
+  text-align: right;
+}
+
+/* ---------------- 输入 ---------------- */
+
+.input-box {
+  background: var(--pomo-surface);
+  border: 1rpx solid var(--pomo-divider);
+  border-radius: 28rpx;
+  height: 96rpx;
+  padding: 0 28rpx;
+  font-size: 30rpx;
+  color: var(--pomo-text);
+}
+
+.input-label {
+  font-size: 24rpx;
+  color: var(--pomo-text-second);
+  margin-bottom: 12rpx;
+}
+
+/* ---------------- 空态 ---------------- */
+
+.empty {
+  text-align: center;
+  color: var(--pomo-text-second);
+  font-size: 24rpx;
+  line-height: 1.9;
+  padding: 52rpx 0;
+}

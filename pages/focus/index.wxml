@@ -1,0 +1,126 @@
+<view class="page focus-page">
+  <view class="scroll-body" style="padding-top: {{navTop || statusBarHeight + 16}}px;">
+    <!-- 头部：日期 + 问候 -->
+    <view class="row-between head">
+      <view class="flex1">
+        <text class="date-text">{{dateTitle}}</text>
+        <text class="greet-text">{{greeting}}</text>
+      </view>
+      <view class="head-actions">
+        <view class="tomato-circle">
+          <text class="tomato-icon">🍅</text>
+        </view>
+        <view class="avatar" bindtap="openMenu">{{avatarText}}</view>
+      </view>
+    </view>
+
+    <!-- 今日番茄 -->
+    <view class="card-goal today-card" style="transform: scale({{cardScale}});">
+      <text class="goal-label">今日番茄</text>
+      <view class="row goal-row">
+        <text class="today-num mono {{numAnim ? 'num-in' : ''}}">{{numText}}</text>
+        <text class="goal-target" wx:if="{{todayTarget > 0}}">/ {{todayTarget}} 个</text>
+      </view>
+      <view class="bar">
+        <view class="bar-fill" style="width: {{progressPercent}}%;"></view>
+      </view>
+      <text class="goal-focus">今日已专注 {{todayFocusMinutes}} 分钟</text>
+    </view>
+
+    <!-- 当前计划 -->
+    <text class="section-title">当前计划</text>
+    <view class="card plan-card" bindtap="openPlans">
+      <view class="plan-stripe"></view>
+      <view class="flex1 plan-text">
+        <text class="plan-name">{{planName}}</text>
+        <text class="plan-meta">{{planMeta}}</text>
+      </view>
+      <text class="tag">更换</text>
+    </view>
+
+    <!-- 摄像头监控 -->
+    <view class="card monitor-card">
+      <view class="row">
+        <text class="camera-icon">📷</text>
+        <view class="flex1 monitor-text">
+          <text class="monitor-title">摄像头专注监控</text>
+          <text class="monitor-hint">{{monitorHint}}</text>
+        </view>
+        <switch checked="{{monitorEnabled}}" disabled="{{!hasPlan}}" color="#E4572E" bindchange="onMonitorChange" />
+      </view>
+
+      <text class="field-label">监控视角</text>
+      <view class="segmented">
+        <view class="seg {{monitorLens === 0 ? 'seg-on' : ''}}" data-lens="0" bindtap="onLensTap">前置 · 正对屏幕</view>
+        <view class="seg {{monitorLens === 1 ? 'seg-on' : ''}}" data-lens="1" bindtap="onLensTap">后置 · 上方俯拍</view>
+      </view>
+
+      <view class="row voice-row">
+        <view class="flex1">
+          <text class="voice-title">分心语音提醒</text>
+          <text class="voice-hint">检测到分心时播放「请不要分心」</text>
+        </view>
+        <switch checked="{{voiceEnabled}}" color="#E4572E" bindchange="onVoiceChange" />
+      </view>
+
+      <view class="row links">
+        <text class="link" bindtap="openMonitorSettings">调整监控参数 ›</text>
+        <text class="link" bindtap="testVoice">检测语音 ›</text>
+      </view>
+
+      <text class="rule-hint">{{monitorRuleHint}}</text>
+    </view>
+
+    <button class="btn btn-primary start-btn" bindtap="onStart">{{running ? '返回专注' : '开始专注'}}</button>
+
+    <!-- 今日记录 -->
+    <view class="row-between records-head">
+      <text class="title-sm">今日记录</text>
+      <view class="row">
+        <text class="second small">{{todayCount}} 条</text>
+        <text class="link clear-link" wx:if="{{!recordsEmpty}}" bindtap="askClearToday">清空</text>
+      </view>
+    </view>
+
+    <text class="empty" wx:if="{{recordsEmpty}}">{{emptyTodayText}}</text>
+    <view wx:else>
+      <view class="card record" wx:for="{{sessions}}" wx:key="id">
+        <text class="rec-time mono">{{item.timeText}}</text>
+        <view class="flex1 rec-text">
+          <text class="rec-name">{{item.nameText}}</text>
+          <text class="rec-meta">{{item.metaText}}</text>
+        </view>
+        <text class="tag {{item.completed ? '' : 'tag-gray'}}">{{item.badgeText}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 入账动效层：番茄要横跨卡片飞行，只能挂全屏 -->
+  <view class="gain-layer" wx:if="{{gainVisible}}">
+    <text class="gain-tomato" style="{{tomatoStyle}}">🍅</text>
+    <view class="gain-ripple" style="{{rippleStyle}}"></view>
+  </view>
+
+  <confirm-dialog
+    show="{{showClearConfirm}}"
+    title="清空今日记录"
+    content="今天的记录明细会被清空，今日番茄数、专注时长等统计不受影响。"
+    cancelText="取消"
+    confirmText="清空"
+    bind:cancel="onClearCancel"
+    bind:confirm="onClearConfirm"
+  />
+
+  <!-- 账户菜单 -->
+  <view class="sheet-mask {{showMenu ? 'sheet-mask-on' : ''}}" bindtap="closeMenu"></view>
+  <view class="sheet {{showMenu ? 'sheet-on' : ''}}">
+    <view class="sheet-head">
+      <text class="sheet-name">{{accountName}}</text>
+      <text class="sheet-role">{{accountRoleText}}</text>
+    </view>
+    <view class="sheet-item" bindtap="menuMonitor">监控参数</view>
+    <view class="sheet-item" bindtap="menuAbout">关于</view>
+    <view class="sheet-item sheet-danger" bindtap="menuLogout">退出登录</view>
+    <view class="sheet-cancel" bindtap="closeMenu">取消</view>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/launch/index",
+    "pages/login/index",
+    "pages/privacy/index",
+    "pages/focus/index",
+    "pages/plans/index",
+    "pages/stats/index",
+    "pages/session/index",
+    "pages/plan-edit/index",
+    "pages/monitor-settings/index",
+    "pages/about/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFF9F5",
+    "navigationBarTitleText": "番茄专注管理",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFF9F5"
+  },
+  "tabBar": {
+    "color": "#8C7F77",
+    "selectedColor": "#E4572E",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/focus/index",
+        "text": "专注"
+      },
+      {
+        "pagePath": "pages/plans/index",
+        "text": "计划"
+      },
+      {
+        "pagePath": "pages/stats/index",
+        "text": "统计"
+      }
+    ]
+  },
+  "permission": {
+    "scope.camera": {
+      "desc": "用于在专注时段检测是否离开座位，画面仅在本机实时分析，不保存、不上传"
+    }
+  },
+  "requiredPrivateInfos": [],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

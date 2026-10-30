@@ -1,0 +1,108 @@
+.page {
+  min-height: 100vh;
+  background: #FFFFFF;
+}
+
+.scroll {
+  min-height: 100vh;
+  padding: 0 40rpx 80rpx;
+  box-sizing: border-box;
+}
+
+.head {
+  padding: 48rpx 0 26rpx;
+  border-bottom: 1rpx solid #F1E7E0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6rpx 20rpx;
+  border-radius: 999rpx;
+  background: #FDECE5;
+  color: #E4572E;
+  font-size: 22rpx;
+}
+
+.h1 {
+  margin-top: 20rpx;
+  font-size: 46rpx;
+  font-weight: 700;
+  line-height: 1.34;
+  color: #2E2723;
+}
+
+.sub {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  color: #8C7F77;
+  line-height: 1.6;
+}
+
+.meta {
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rpx 32rpx;
+  font-size: 24rpx;
+  color: #8C7F77;
+}
+
+.lead {
+  margin-top: 32rpx;
+  padding: 28rpx 28rpx;
+  background: #F7F8FA;
+  border-left: 6rpx solid #E4572E;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  line-height: 1.8;
+  color: #2E2723;
+}
+
+.strong {
+  color: #E4572E;
+  font-weight: 600;
+}
+
+.section {
+  margin-top: 48rpx;
+}
+
+.h2 {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #2E2723;
+  padding-left: 20rpx;
+  border-left: 8rpx solid #E4572E;
+  line-height: 1.4;
+}
+
+.para {
+  margin-top: 18rpx;
+  font-size: 28rpx;
+  line-height: 1.82;
+  color: #4A423D;
+}
+
+.foot {
+  margin-top: 64rpx;
+  padding-top: 32rpx;
+  border-top: 1rpx solid #F1E7E0;
+}
+
+.foot-line {
+  font-size: 24rpx;
+  color: #8C7F77;
+  line-height: 1.8;
+}
+
+.foot-link {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #E4572E;
+}
+
+.foot-copy {
+  margin-top: 40rpx;
+  font-size: 22rpx;
+  color: #A99C93;
+}

@@ -1,0 +1,31 @@
+<view class="page">
+  <scroll-view scroll-y class="scroll">
+    <view class="head">
+      <view class="badge">隐私政策</view>
+      <view class="h1">番茄专注管理 隐私政策</view>
+      <view class="sub">本政策适用于微信小程序「番茄专注管理」。</view>
+      <view class="meta">
+        <text>生效日期：{{effectiveDate}}</text>
+        <text>版本：{{version}}</text>
+      </view>
+    </view>
+
+    <view class="lead">
+      简单说：<text class="strong">这个小程序不收集你的任何个人信息。</text>
+      你的账户、计划、专注记录全部只存在你自己的手机里；摄像头画面只在本机实时分析，
+      既不会保存成图片，也不会离开设备。我们没有服务器，也没有能力看到你的任何数据。
+    </view>
+
+    <view class="section" wx:for="{{sections}}" wx:key="title">
+      <view class="h2">{{item.title}}</view>
+      <view class="para" wx:for="{{item.paras}}" wx:for-item="p" wx:key="*this">{{p}}</view>
+    </view>
+
+    <view class="foot">
+      <view class="foot-line">本政策适用于微信小程序「番茄专注管理」。</view>
+      <view class="foot-link" bindtap="copyUrl">复制政策在线地址</view>
+      <view class="foot-link" bindtap="copyEmail">复制开发者邮箱</view>
+      <view class="foot-copy">© 2026 番茄专注管理 · 保留所有权利</view>
+    </view>
+  </scroll-view>
+</view>

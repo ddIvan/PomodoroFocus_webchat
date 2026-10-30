@@ -1,0 +1,5 @@
+<view class="launch">
+  <view class="logo">🍅</view>
+  <view class="name">番茄专注</view>
+  <view class="tip">{{tip}}</view>
+</view>

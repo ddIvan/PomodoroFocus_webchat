@@ -1,0 +1,181 @@
+.settings-page {
+  padding: 0 40rpx 48rpx;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  height: 104rpx;
+  box-sizing: border-box;
+}
+
+.nav-back {
+  width: 64rpx;
+  font-size: 44rpx;
+  line-height: 1;
+  color: var(--pomo-text);
+}
+
+.nav-title {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.nav-action {
+  font-size: 26rpx;
+  color: var(--pomo-primary);
+}
+
+/* ---------------- 场景 ---------------- */
+
+.scene-chips {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chip {
+  margin: 0 16rpx 16rpx 0;
+  padding: 14rpx 24rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  color: var(--pomo-text-second);
+  background: var(--pomo-surface);
+  border: 1rpx solid var(--pomo-divider);
+}
+
+.chip-on {
+  color: #fff;
+  background: var(--pomo-primary);
+  border-color: var(--pomo-primary);
+}
+
+.scene-card {
+  margin-top: 8rpx;
+  padding: 24rpx;
+  border-radius: 28rpx;
+  background: var(--pomo-surface);
+  border: 1rpx solid var(--pomo-divider);
+}
+
+.scene-summary {
+  display: block;
+  font-size: 24rpx;
+  line-height: 1.5;
+  color: var(--pomo-text-second);
+}
+
+.scene-state {
+  display: inline-block;
+  margin-top: 14rpx;
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+}
+
+.scene-state-on {
+  color: var(--pomo-primary);
+}
+
+/* ---------------- 预设 ---------------- */
+
+.preset-row {
+  display: flex;
+  margin-top: 24rpx;
+}
+
+.preset {
+  flex: 1;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: var(--pomo-text-second);
+  background: var(--pomo-surface);
+  border: 1rpx solid var(--pomo-divider);
+}
+
+.preset:first-child {
+  border-radius: 22rpx 0 0 22rpx;
+}
+
+.preset:last-child {
+  border-radius: 0 22rpx 22rpx 0;
+}
+
+.preset + .preset {
+  border-left: none;
+}
+
+.preset-on {
+  color: var(--pomo-primary);
+  font-weight: 600;
+  background: var(--pomo-primary-light);
+}
+
+/* ---------------- 参数 ---------------- */
+
+.group-title {
+  display: block;
+  margin: 36rpx 0 4rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.param {
+  margin-top: 24rpx;
+}
+
+.param-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.param-label {
+  font-size: 28rpx;
+  color: var(--pomo-text);
+}
+
+.param-value {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: var(--pomo-primary);
+}
+
+.param-hint {
+  display: block;
+  margin-top: 4rpx;
+  font-size: 21rpx;
+  line-height: 1.5;
+  color: var(--pomo-text-second);
+}
+
+.param-slider {
+  margin: 12rpx 8rpx 0;
+}
+
+/* ---------------- 说明 ---------------- */
+
+.note-card {
+  margin-top: 44rpx;
+  padding: 24rpx;
+  border-radius: 28rpx;
+  background: var(--pomo-primary-light);
+}
+
+.note-title {
+  display: block;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.note-line {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 21rpx;
+  line-height: 1.6;
+  color: var(--pomo-text-second);
+}

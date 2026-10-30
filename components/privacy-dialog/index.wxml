@@ -1,0 +1,27 @@
+<view class="mask" wx:if="{{show}}" catchtap="noop" catchtouchmove="noop">
+  <view class="dialog" catchtap="noop">
+    <view class="dialog-title">隐私政策</view>
+
+    <scroll-view class="dialog-body" scroll-y>
+      <view class="para">
+        欢迎使用「番茄专注管理」。在使用前，请你仔细阅读并同意下面的说明与《隐私政策》。
+      </view>
+      <view class="para second">
+        1. 账号、专注计划与专注记录仅保存在你的手机本地，不会上传服务器，也不会提供给任何第三方。
+      </view>
+      <view class="para second">
+        2. 摄像头仅在你开启「专注监控」并授权后使用，画面只在本机实时判断是否分心，不保存、不上传。
+      </view>
+      <view class="para second">
+        3. 我们不收集通讯录、短信、位置、设备标识等信息，也未集成广告或统计分析 SDK。
+      </view>
+
+      <view class="detail-link" bindtap="onDetail">查看《隐私政策》完整内容</view>
+    </scroll-view>
+
+    <view class="dialog-actions">
+      <view class="action action-cancel" bindtap="onDisagree">不同意</view>
+      <view class="action action-confirm" bindtap="onAgree">同意并继续</view>
+    </view>
+  </view>
+</view>

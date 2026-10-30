@@ -1,0 +1,178 @@
+.session-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 24rpx 40rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.session-head {
+  display: flex;
+  align-items: center;
+  height: 104rpx;
+}
+
+.s-plan-name {
+  flex: 1;
+  min-width: 0;
+  margin-right: 20rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.spacer {
+  flex: 1;
+  min-height: 20rpx;
+}
+
+.goal {
+  display: block;
+  text-align: center;
+  font-size: 26rpx;
+  color: var(--pomo-text-second);
+  line-height: 1.5;
+}
+
+.goal-warn {
+  color: var(--pomo-amber);
+}
+
+/* ---------------- 进度环 ---------------- */
+
+.ring-wrap {
+  position: relative;
+  width: 528rpx;
+  height: 528rpx;
+  margin: 36rpx auto 0;
+}
+
+.ring {
+  width: 528rpx;
+  height: 528rpx;
+}
+
+.ring-center {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.remaining {
+  font-size: 96rpx;
+  font-weight: 700;
+  color: var(--pomo-text);
+  line-height: 1.1;
+}
+
+.phase-text {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: var(--pomo-text-second);
+}
+
+/* ---------------- 分心提示 ---------------- */
+
+.distract-card {
+  margin-top: 28rpx;
+  padding: 24rpx;
+  border-radius: 28rpx;
+  background: var(--pomo-amber-light);
+  color: #9c6b12;
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+
+/* ---------------- 监控状态 ---------------- */
+
+.monitor-info {
+  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+}
+
+.cam-wrap {
+  flex: none;
+  width: 132rpx;
+  height: 132rpx;
+  margin-right: 24rpx;
+  border-radius: 28rpx;
+  overflow: hidden;
+  background: #1f1a17;
+}
+
+.cam {
+  width: 132rpx;
+  height: 132rpx;
+}
+
+.monitor-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.monitor-state {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.monitor-state.ok {
+  color: var(--pomo-green);
+}
+
+.monitor-state.warn {
+  color: var(--pomo-amber);
+}
+
+.monitor-detail {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+}
+
+.monitor-privacy {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 20rpx;
+  color: var(--pomo-text-second);
+}
+
+/* ---------------- 按钮 ---------------- */
+
+.pause-btn {
+  height: 112rpx;
+  border-radius: 36rpx;
+  font-size: 32rpx;
+}
+
+.stop-btn {
+  margin-top: 4rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  background: transparent;
+  color: var(--pomo-text-second);
+  font-size: 28rpx;
+  border: none;
+}
+
+.stop-btn::after {
+  border: none;
+}
+
+.stop-btn[disabled] {
+  opacity: 0.5;
+}

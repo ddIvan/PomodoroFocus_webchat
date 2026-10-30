@@ -1,0 +1,48 @@
+<view class="page plans-page">
+  <view class="scroll-body">
+    <text class="title-lg">专注计划</text>
+    <text class="sub-text">自定义时长、目标与频率，让专注贴合你的节奏</text>
+
+    <view class="empty-wrap" wx:if="{{empty}}">
+      <view class="empty-icon"><text class="empty-emoji">🍅</text></view>
+      <text class="empty-title">还没有专注计划</text>
+      <text class="empty-desc">创建一个计划，设定专注时长、目标与频率</text>
+      <button class="btn btn-primary empty-btn" bindtap="onCreate">创建第一个计划</button>
+    </view>
+
+    <view wx:else>
+      <view
+        wx:for="{{plans}}"
+        wx:key="id"
+        class="card plan-row {{item.current ? 'plan-row-on' : ''}}"
+        data-id="{{item.id}}"
+        bindtap="onSelect"
+      >
+        <view class="plan-icon"><text class="plan-emoji">🍅</text></view>
+        <view class="flex1 plan-main">
+          <view class="row plan-name-row">
+            <text class="plan-name">{{item.name}}</text>
+            <text class="tag plan-current" wx:if="{{item.current}}">使用中</text>
+          </view>
+          <text class="plan-goal">{{item.goalText}}</text>
+          <text class="plan-tags">{{item.tags}}</text>
+        </view>
+        <view class="more-btn" data-id="{{item.id}}" catchtap="onMore">
+          <text class="more-dots">···</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <button class="fab" bindtap="onCreate">＋ 新建计划</button>
+
+  <confirm-dialog
+    show="{{showDelete}}"
+    title="删除计划"
+    content="确定要删除「{{deleteName}}」吗？已有的专注记录会保留。"
+    cancelText="取消"
+    confirmText="删除"
+    bind:cancel="onDeleteCancel"
+    bind:confirm="onDeleteConfirm"
+  />
+</view>

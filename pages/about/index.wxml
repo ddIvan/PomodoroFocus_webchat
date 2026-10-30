@@ -1,0 +1,22 @@
+<view class="page about-page">
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-back" bindtap="onBack">‹</view>
+    <text class="nav-title">关于</text>
+    <view class="nav-holder"></view>
+  </view>
+
+  <view class="brand">
+    <view class="logo">番</view>
+    <text class="app-name">{{appName}}</text>
+    <text class="app-version">{{version}}</text>
+  </view>
+
+  <view class="card item" bindtap="openPrivacy">
+    <text class="item-label">隐私政策</text>
+    <text class="item-arrow">›</text>
+  </view>
+
+  <text class="desc">本小程序使用微信登录识别身份：服务端仅保存微信 openid 与登录时间，计划与专注记录只保存在这台设备的微信本地缓存中，摄像头画面仅在本机实时分析，不保存、不上传。</text>
+
+  <text class="copyright">© 2026 番茄专注管理{{'\n'}}wx48ef2793601fcff0</text>
+</view>

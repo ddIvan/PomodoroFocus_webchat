@@ -1,0 +1,191 @@
+.stats-page {
+  padding-bottom: 40rpx;
+}
+
+/* ---------------- 月份切换 ---------------- */
+
+.month-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8rpx;
+}
+
+.month-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.arrow {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  line-height: 1;
+  color: var(--pomo-text-second);
+  background: var(--pomo-surface);
+  border: 1rpx solid var(--pomo-divider);
+}
+
+.arrow-off {
+  opacity: 0.3;
+}
+
+/* ---------------- 指标 ---------------- */
+
+.nums {
+  display: flex;
+  margin-top: 28rpx;
+}
+
+.num-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.num-value {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: var(--pomo-text);
+  line-height: 1.2;
+}
+
+.num-label {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+}
+
+/* ---------------- 日历 ---------------- */
+
+.calendar {
+  margin-top: 24rpx;
+  padding: 20rpx 16rpx;
+}
+
+.week-row {
+  display: flex;
+}
+
+.week-cell {
+  flex: 1;
+  text-align: center;
+  font-size: 22rpx;
+  line-height: 56rpx;
+  color: var(--pomo-text-second);
+}
+
+.day-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day-cell {
+  width: 14.2857%;
+  height: 88rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+}
+
+.day-on {
+  background: var(--pomo-primary-light);
+}
+
+.day-num {
+  font-size: 26rpx;
+  color: var(--pomo-text);
+  line-height: 1.1;
+}
+
+.day-on .day-num {
+  color: var(--pomo-primary);
+  font-weight: 600;
+}
+
+.day-today {
+  color: var(--pomo-primary);
+  font-weight: 700;
+}
+
+.day-count {
+  margin-top: 2rpx;
+  font-size: 18rpx;
+  line-height: 1;
+  color: var(--pomo-primary);
+}
+
+.day-on .day-count {
+  font-weight: 600;
+}
+
+/* ---------------- 选中日 ---------------- */
+
+.selected-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 36rpx;
+}
+
+.selected-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.selected-summary {
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+}
+
+/* ---------------- 明细 ---------------- */
+
+.record {
+  margin-top: 16rpx;
+  padding: 28rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 32rpx;
+}
+
+.rec-time {
+  width: 104rpx;
+  flex: none;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.rec-text {
+  margin-right: 16rpx;
+}
+
+.rec-name {
+  display: block;
+  font-size: 28rpx;
+  color: var(--pomo-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rec-meta {
+  display: block;
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: var(--pomo-text-second);
+}
+
+.tag-gray {
+  background: #f2eeeb;
+  color: var(--pomo-text-second);
+}

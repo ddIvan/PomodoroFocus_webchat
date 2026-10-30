@@ -1,0 +1,56 @@
+<view class="page session-page">
+  <view class="session-head">
+    <text class="s-plan-name">{{planName}}</text>
+    <text class="tag">{{strictTag}}</text>
+  </view>
+
+  <view class="spacer"></view>
+
+  <text class="goal {{warnGoal ? 'goal-warn' : ''}}">{{goalText}}</text>
+
+  <view class="ring-wrap">
+    <canvas type="2d" id="ring" class="ring"></canvas>
+    <view class="ring-center">
+      <text class="remaining mono">{{remainingText}}</text>
+      <text class="phase-text">{{phaseText}}</text>
+    </view>
+  </view>
+
+  <view class="distract-card" wx:if="{{cardDistraction}}">
+    <text>{{distractionText}}</text>
+  </view>
+
+  <view class="spacer"></view>
+
+  <view class="monitor-info">
+    <view class="cam-wrap" wx:if="{{showCamera}}">
+      <camera
+        id="cam"
+        class="cam"
+        device-position="{{cameraPosition}}"
+        flash="off"
+        frame-size="small"
+        bindinitdone="onCameraReady"
+        binderror="onCameraError"
+      ></camera>
+    </view>
+    <view class="monitor-text">
+      <text class="monitor-state {{monitorStateClass}}">{{monitorStateText}}</text>
+      <text class="monitor-detail">{{distractInfo}}</text>
+      <text class="monitor-privacy">画面仅在本机分析，不保存不上传</text>
+    </view>
+  </view>
+
+  <button class="btn btn-primary pause-btn" disabled="{{!active}}" bindtap="onPauseToggle">{{pauseText}}</button>
+  <button class="stop-btn" disabled="{{!active}}" bindtap="askAbandon">结束本次专注</button>
+
+  <confirm-dialog
+    show="{{showAbandonConfirm}}"
+    title="结束本次专注？"
+    content="未完成完整时段，本次不会计入番茄。"
+    cancelText="继续专注"
+    confirmText="结束"
+    bind:cancel="onAbandonCancel"
+    bind:confirm="onAbandonConfirm"
+  />
+</view>

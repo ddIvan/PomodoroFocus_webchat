@@ -1,0 +1,171 @@
+.plans-page {
+  padding-bottom: 40rpx;
+}
+
+.title-lg {
+  display: block;
+  font-size: 48rpx;
+  font-weight: 700;
+  color: var(--pomo-text);
+  line-height: 1.25;
+}
+
+.sub-text {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: var(--pomo-text-second);
+}
+
+/* ---------------- 空态 ---------------- */
+
+.empty-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 180rpx;
+}
+
+.empty-icon {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+  background: var(--pomo-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-emoji {
+  font-size: 68rpx;
+  line-height: 1;
+}
+
+.empty-title {
+  margin-top: 32rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+}
+
+.empty-desc {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  color: var(--pomo-text-second);
+}
+
+.empty-btn {
+  margin-top: 36rpx;
+  width: 420rpx;
+  height: 96rpx;
+  border-radius: 32rpx;
+  font-size: 30rpx;
+}
+
+/* ---------------- 计划列表 ---------------- */
+
+.plan-row {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+}
+
+.plan-row-on {
+  border-color: var(--pomo-primary);
+}
+
+.plan-icon {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  background: var(--pomo-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.plan-emoji {
+  font-size: 44rpx;
+  line-height: 1;
+}
+
+.plan-main {
+  margin-left: 24rpx;
+  margin-right: 12rpx;
+}
+
+.plan-name-row {
+  align-items: center;
+}
+
+.plan-name {
+  max-width: 380rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--pomo-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plan-current {
+  margin-left: 16rpx;
+  font-size: 20rpx;
+  padding: 4rpx 12rpx;
+}
+
+.plan-goal {
+  display: block;
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  color: var(--pomo-text-second);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plan-tags {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 22rpx;
+  color: var(--pomo-primary);
+}
+
+.more-btn {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.more-dots {
+  font-size: 34rpx;
+  color: var(--pomo-text-second);
+  letter-spacing: 2rpx;
+}
+
+/* ---------------- 新建按钮 ---------------- */
+
+.fab {
+  position: fixed;
+  right: 40rpx;
+  bottom: 48rpx;
+  width: 300rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  background: var(--pomo-primary);
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 96rpx;
+  padding: 0;
+  box-shadow: 0 12rpx 28rpx rgba(228, 87, 46, 0.28);
+  z-index: 10;
+}
+
+.fab::after {
+  border: none;
+}

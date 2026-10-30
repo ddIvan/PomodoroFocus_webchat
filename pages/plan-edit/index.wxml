@@ -1,0 +1,110 @@
+<view class="page edit-page">
+  <view class="scroll-body">
+    <text class="field-title">计划名称</text>
+    <input
+      class="input {{nameError ? 'input-error' : ''}}"
+      value="{{name}}"
+      maxlength="20"
+      placeholder="例如：晨间阅读"
+      placeholder-class="input-ph"
+      bindinput="onNameInput"
+    />
+    <text class="field-error" wx:if="{{nameError}}">{{nameError}}</text>
+
+    <view class="field-head">
+      <text class="field-title flush">单次专注时长</text>
+      <text class="field-value">{{durationText}} 分钟</text>
+    </view>
+    <slider
+      min="5"
+      max="120"
+      step="5"
+      value="{{duration}}"
+      activeColor="#E4572E"
+      backgroundColor="#F0E5DE"
+      block-color="#E4572E"
+      block-size="24"
+      bindchange="onDurationChange"
+    />
+
+    <text class="field-title">专注目标</text>
+    <textarea
+      class="textarea"
+      value="{{goal}}"
+      maxlength="60"
+      placeholder="例如：完成第三章读书笔记（可留空）"
+      placeholder-class="input-ph"
+      bindinput="onGoalInput"
+    />
+
+    <text class="field-title">重复频率</text>
+    <view class="segmented">
+      <view class="seg {{frequencyType === 0 ? 'seg-on' : ''}}" data-type="0" bindtap="onFreqTap">每天</view>
+      <view class="seg {{frequencyType === 1 ? 'seg-on' : ''}}" data-type="1" bindtap="onFreqTap">工作日</view>
+      <view class="seg {{frequencyType === 2 ? 'seg-on' : ''}}" data-type="2" bindtap="onFreqTap">自定义</view>
+    </view>
+
+    <view class="weekday-row" wx:if="{{customVisible}}">
+      <view
+        wx:for="{{weekdays}}"
+        wx:key="bit"
+        class="weekday {{item.on ? 'weekday-on' : ''}}"
+        data-bit="{{item.bit}}"
+        bindtap="onWeekdayTap"
+      >{{item.label}}</view>
+    </view>
+
+    <view class="field-head">
+      <text class="field-title flush">每日目标</text>
+      <text class="field-value">{{dailyTargetText}} 个</text>
+    </view>
+    <slider
+      min="1"
+      max="12"
+      step="1"
+      value="{{dailyTarget}}"
+      activeColor="#E4572E"
+      backgroundColor="#F0E5DE"
+      block-color="#E4572E"
+      block-size="24"
+      bindchange="onDailyTargetChange"
+    />
+    <text class="field-desc">计划今天要完成的番茄数量</text>
+
+    <text class="field-title">任务类型</text>
+    <view class="segmented">
+      <view class="seg {{taskMode === 0 ? 'seg-on' : ''}}" data-mode="0" bindtap="onTaskTap">盯屏任务</view>
+      <view class="seg {{taskMode === 1 ? 'seg-on' : ''}}" data-mode="1" bindtap="onTaskTap">纸面任务</view>
+    </view>
+    <text class="field-desc">{{taskHint}}</text>
+
+    <text class="field-title">分心判定严格度</text>
+    <view class="segmented">
+      <view class="seg {{strictness === 0 ? 'seg-on' : ''}}" data-strict="0" bindtap="onStrictTap">宽松</view>
+      <view class="seg {{strictness === 1 ? 'seg-on' : ''}}" data-strict="1" bindtap="onStrictTap">标准</view>
+      <view class="seg {{strictness === 2 ? 'seg-on' : ''}}" data-strict="2" bindtap="onStrictTap">严格</view>
+    </view>
+    <text class="field-desc">{{strictHint}}</text>
+
+    <view class="monitor-row">
+      <view class="flex1 monitor-text">
+        <text class="monitor-title">默认开启摄像头监控</text>
+        <text class="field-desc flush">开始专注时仍可临时切换</text>
+      </view>
+      <switch checked="{{monitorEnabled}}" color="#E4572E" bindchange="onMonitorChange" />
+    </view>
+
+    <button class="btn btn-primary save-btn" bindtap="onSave">保存计划</button>
+    <text class="delete-link" wx:if="{{isEdit}}" bindtap="askDelete">删除这个计划</text>
+  </view>
+
+  <confirm-dialog
+    show="{{showDelete}}"
+    title="删除计划"
+    content="确定要删除这个计划吗？已有的专注记录会保留。"
+    cancelText="取消"
+    confirmText="删除"
+    bind:cancel="onDeleteCancel"
+    bind:confirm="onDeleteConfirm"
+  />
+</view>

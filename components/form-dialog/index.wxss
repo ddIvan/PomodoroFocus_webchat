@@ -1,0 +1,87 @@
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(46, 39, 35, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+.dialog {
+  width: 600rpx;
+  background: #FFFFFF;
+  border-radius: 32rpx;
+  padding: 40rpx 36rpx 8rpx;
+}
+
+.title {
+  font-size: 33rpx;
+  font-weight: 600;
+  color: #2E2723;
+  text-align: center;
+}
+
+.body {
+  max-height: 52vh;
+  margin-top: 8rpx;
+}
+
+.field {
+  margin-top: 26rpx;
+}
+
+.field-label {
+  font-size: 24rpx;
+  color: #8C7F77;
+  margin-bottom: 12rpx;
+}
+
+.field-input {
+  height: 92rpx;
+  border: 1rpx solid #F1E7E0;
+  border-radius: 24rpx;
+  padding: 0 24rpx;
+  font-size: 30rpx;
+  color: #2E2723;
+}
+
+.ph {
+  color: #C9BDB5;
+}
+
+.err {
+  margin-top: 20rpx;
+  font-size: 25rpx;
+  color: #C0451F;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #F1E7E0;
+  margin-top: 30rpx;
+  height: 108rpx;
+}
+
+.action {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 31rpx;
+}
+
+.cancel {
+  color: #8C7F77;
+}
+
+.confirm {
+  color: #E4572E;
+  font-weight: 600;
+}
